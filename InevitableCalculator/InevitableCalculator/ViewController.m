@@ -156,6 +156,46 @@ float result = 0;
     _currentOperator = @"/";
 }
 
+- (IBAction)buttonSquaredPressed:(id)sender {
+    NSLog(@"ˆ2");
+    _currentOperator = @"ˆ2";
+    if ([_currentOperator isEqualToString:@"ˆ2"]) {
+        result = leftNumber * leftNumber;
+        leftNumber = result;
+    }
+    _calculatorOutput.text = [NSString stringWithFormat:@"%f", result];
+}
+
+- (IBAction)buttonSqRtPressed:(id)sender {
+    NSLog(@"√");
+    _currentOperator = @"√";
+    if ([_currentOperator isEqualToString:@"√"]) {
+        result = sqrtf(leftNumber);
+        leftNumber = result;
+    }
+    _calculatorOutput.text = [NSString stringWithFormat:@"%f", result];
+}
+
+- (IBAction)buttonPlusMinusPressed:(id)sender {
+    NSLog(@"+/-");
+    _currentOperator = @"+/-";
+    if ([_currentOperator isEqualToString:@"+/-"]) {
+        result = leftNumber * -1;
+        leftNumber = result;
+    }
+    _calculatorOutput.text = [NSString stringWithFormat:@"%f", result];
+}
+
+- (IBAction)buttonPercentagePressed:(id)sender {
+    NSLog(@"Percentage");
+    _currentOperator = @"Percentage";
+    if ([_currentOperator isEqualToString:@"Percentage"]) {
+        result = leftNumber / 100;
+        leftNumber = result;
+    }
+    _calculatorOutput.text = [NSString stringWithFormat:@"%f", result];
+}
+
 - (IBAction)buttonEqualsPressed:(id)sender {
     NSLog(@"=");
     if ([_currentOperator isEqualToString:@"+"]) {
