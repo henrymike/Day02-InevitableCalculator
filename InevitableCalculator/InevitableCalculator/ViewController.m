@@ -40,16 +40,139 @@ float result = 0;
     }
 }
 
+- (IBAction)button2Pressed:(id)sender {
+    NSLog(@"2");
+    _calculatorOutput.text = [NSString stringWithFormat:@"%@2", _calculatorOutput.text];
+    if ([_currentOperator isEqualToString:@""]) {
+        leftNumber = [_calculatorOutput.text floatValue];
+    }   else {
+        rightNumber = [_calculatorOutput.text floatValue];
+    }
+}
+
+- (IBAction)button3Pressed:(id)sender {
+    NSLog(@"3");
+    _calculatorOutput.text = [NSString stringWithFormat:@"%@3", _calculatorOutput.text];
+    if ([_currentOperator isEqualToString:@""]) {
+        leftNumber = [_calculatorOutput.text floatValue];
+    }   else {
+        rightNumber = [_calculatorOutput.text floatValue];
+    }
+}
+
+- (IBAction)button4Pressed:(id)sender {
+    NSLog(@"4");
+    _calculatorOutput.text = [NSString stringWithFormat:@"%@4", _calculatorOutput.text];
+    if ([_currentOperator isEqualToString:@""]) {
+        leftNumber = [_calculatorOutput.text floatValue];
+    }   else {
+        rightNumber = [_calculatorOutput.text floatValue];
+    }
+}
+
+- (IBAction)button5Pressed:(id)sender {
+    NSLog(@"5");
+    _calculatorOutput.text = [NSString stringWithFormat:@"%@5", _calculatorOutput.text];
+    if ([_currentOperator isEqualToString:@""]) {
+        leftNumber = [_calculatorOutput.text floatValue];
+    }   else {
+        rightNumber = [_calculatorOutput.text floatValue];
+    }
+}
+
+- (IBAction)button6Pressed:(id)sender {
+    NSLog(@"6");
+    _calculatorOutput.text = [NSString stringWithFormat:@"%@6", _calculatorOutput.text];
+    if ([_currentOperator isEqualToString:@""]) {
+        leftNumber = [_calculatorOutput.text floatValue];
+    }   else {
+        rightNumber = [_calculatorOutput.text floatValue];
+    }
+}
+
+- (IBAction)button7Pressed:(id)sender {
+    NSLog(@"7");
+    _calculatorOutput.text = [NSString stringWithFormat:@"%@7", _calculatorOutput.text];
+    if ([_currentOperator isEqualToString:@""]) {
+        leftNumber = [_calculatorOutput.text floatValue];
+    }   else {
+        rightNumber = [_calculatorOutput.text floatValue];
+    }
+}
+
+- (IBAction)button8Pressed:(id)sender {
+    NSLog(@"8");
+    _calculatorOutput.text = [NSString stringWithFormat:@"%@8", _calculatorOutput.text];
+    if ([_currentOperator isEqualToString:@""]) {
+        leftNumber = [_calculatorOutput.text floatValue];
+    }   else {
+        rightNumber = [_calculatorOutput.text floatValue];
+    }
+}
+
+- (IBAction)button9Pressed:(id)sender {
+    NSLog(@"9");
+    _calculatorOutput.text = [NSString stringWithFormat:@"%@9", _calculatorOutput.text];
+    if ([_currentOperator isEqualToString:@""]) {
+        leftNumber = [_calculatorOutput.text floatValue];
+    }   else {
+        rightNumber = [_calculatorOutput.text floatValue];
+    }
+}
+
+- (IBAction)button0Pressed:(id)sender {
+    NSLog(@"0");
+    _calculatorOutput.text = [NSString stringWithFormat:@"%@0", _calculatorOutput.text];
+    if ([_currentOperator isEqualToString:@""]) {
+        leftNumber = [_calculatorOutput.text floatValue];
+    }   else {
+        rightNumber = [_calculatorOutput.text floatValue];
+    }
+}
+
 - (IBAction)buttonPlusPressed:(id)sender {
     NSLog(@"+");
     _calculatorOutput.text = @"";
     _currentOperator = @"+";
 }
 
+
+- (IBAction)buttonMinusPressed:(id)sender {
+    NSLog(@"-");
+    _calculatorOutput.text = @"";
+    _currentOperator = @"-";
+}
+
+- (IBAction)buttonMultiplyPressed:(id)sender {
+    NSLog(@"*");
+    _calculatorOutput.text = @"";
+    _currentOperator = @"*";
+}
+
+
+- (IBAction)buttonDividePressed:(id)sender {
+    NSLog(@"/");
+    _calculatorOutput.text = @"";
+    _currentOperator = @"/";
+}
+
 - (IBAction)buttonEqualsPressed:(id)sender {
     NSLog(@"=");
     if ([_currentOperator isEqualToString:@"+"]) {
         result = leftNumber + rightNumber;
+        leftNumber = result;
+    }
+    if ([_currentOperator isEqualToString:@"-"]) {
+        result = leftNumber - rightNumber;
+        leftNumber = result;
+    }
+    if ([_currentOperator isEqualToString:@"*"]) {
+        result = leftNumber * rightNumber;
+        leftNumber = result;
+    }
+    if ([_currentOperator isEqualToString:@"/"]) {
+        result = leftNumber / rightNumber;
+        leftNumber = result;
     }
     _calculatorOutput.text = [NSString stringWithFormat:@"%f", result];
 }
