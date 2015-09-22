@@ -161,6 +161,13 @@
                                     <action selector="buttonPercentagePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bjf-fX-SOE"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDb-Ja-mbb">
+                                <rect key="frame" x="225" y="308" width="30" height="30"/>
+                                <state key="normal" title="."/>
+                                <connections>
+                                    <action selector="buttonDecimalPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="13g-hv-hbs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>

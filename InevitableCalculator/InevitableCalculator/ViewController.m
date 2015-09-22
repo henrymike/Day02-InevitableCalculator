@@ -130,6 +130,16 @@ float result = 0;
     }
 }
 
+- (IBAction)buttonDecimalPressed:(id)sender {
+    NSLog(@"Decimal");
+    _calculatorOutput.text = [NSString stringWithFormat:@"%@.", _calculatorOutput.text];
+    if ([_currentOperator isEqualToString:@""]) {
+        leftNumber = [_calculatorOutput.text floatValue];
+    }   else {
+        rightNumber = [_calculatorOutput.text floatValue];
+    }
+}
+
 - (IBAction)buttonPlusPressed:(id)sender {
     NSLog(@"+");
     _calculatorOutput.text = @"";
