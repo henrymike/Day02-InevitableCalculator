@@ -229,10 +229,6 @@ float result = 0;
 
 
 
-
-
-
-
 #pragma mark - Life Cycle Methods
 
 - (void)viewDidLoad {
