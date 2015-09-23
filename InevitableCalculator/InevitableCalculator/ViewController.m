@@ -10,8 +10,8 @@
 
 @interface ViewController ()
 
-@property (retain) IBOutlet UITextField    *calculatorOutput;
-@property (retain) NSString                *currentOperator;
+@property (nonatomic, weak)  IBOutlet UITextView     *calculatorOutput;
+@property (nonatomic, strong)         NSString       *currentOperator;
 @end
 
 @implementation ViewController
@@ -32,6 +32,8 @@ float result = 0;
 
 - (IBAction)button1Pressed:(id)sender {
     NSLog(@"1");
+    // this may allow me to clear the number when no operator is present
+    //_calculatorOutput.text = @"";
     _calculatorOutput.text = [NSString stringWithFormat:@"%@1", _calculatorOutput.text];
     if ([_currentOperator isEqualToString:@""]) {
         leftNumber = [_calculatorOutput.text floatValue];
@@ -132,7 +134,10 @@ float result = 0;
 
 - (IBAction)buttonDecimalPressed:(id)sender {
     NSLog(@"Decimal");
-    _calculatorOutput.text = [NSString stringWithFormat:@"%@.", _calculatorOutput.text];
+    // Checks for existing decimal and doesn't allow it if present
+    if (![_calculatorOutput.text containsString:@"."]) {
+        _calculatorOutput.text = [_calculatorOutput.text stringByAppendingString:(@".")];
+    }
     if ([_currentOperator isEqualToString:@""]) {
         leftNumber = [_calculatorOutput.text floatValue];
     }   else {
