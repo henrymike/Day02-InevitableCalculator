@@ -10,8 +10,8 @@
 
 @interface ViewController ()
 
-@property (nonatomic, weak)  IBOutlet UITextView     *calculatorOutput;
-@property (nonatomic, strong)         NSString       *currentOperator;
+@property (nonatomic, weak)  IBOutlet UILabel       *calculatorOutput;
+@property (nonatomic, strong)         NSString      *currentOperator;
 @end
 
 @implementation ViewController
